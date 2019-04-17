@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/pokeball.png" type="image/png">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="img/pokeball.png" width="30" height="30" class="d-inline-block align-top">
+        Pokedex
+    </a>
+</nav>
+
+<!--Cuerpo-->
+<div class="container-fluid">
+    <div class="row">
+        <!--Formulario-->
+        <div class="col-md-4 mt-5 text-center">
+            <div class="card ">
+                <div class="card-header">Busca tu Pokemon</div>
+                <div class="card-body">
+                    <form id="formPokemon">
+                        <div class="form-group">
+                            <label for="busquedaPokemon">Nombre del Pokemon</label>
+                            <input type="text" class="form-control" id="busquedaPokemon"
+                                   placeholder="Ingresa el nombrel del Pokemon" autofocus>
+                            <small class="form-text text-muted">La magia empieza aquí</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Carta con la informacion-->
+        <div id="muestraInfo" class="card col-md-7 mt-5 ml-5 text-center" style="display: none ">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img id="imgPokemon" src="#" class="card-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 id="nombrePokemon" class="card-title"></h5>
+                        <p id="descripcionPokemon" class="card-text"></p>
+                        <p class="card-text">
+                            <small id="indexPokemon" class="text-muted"></small>
+                        </p>
+                    </div>
+                </div>
+
+                <!--Barras de progreso-->
+                <div class="col-md-6 mb-4">
+                    <label for="felizPokemon">Felicidad base</label>
+                    <div class="progress mb-3">
+                        <div id="felizPokemon" class="progress-bar" role="progressbar" style="width: 0% "
+                             aria-valuenow="0" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <label for="capturaPokemon">Ratio de captura</label>
+                    <div class="progress mb-3">
+                        <div id="capturaPokemon" class="progress-bar" role="progressbar" style="width: 0%"
+                             aria-valuenow="25" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <label for="ecloPokemon">Tiempo de eclosión</label>
+                    <div class="progress mb-3">
+                        <div id="ecloPokemon" class="progress-bar" role="progressbar" style="width: 0%"
+                             aria-valuenow="50" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <!--Info adicional-->
+                <div class="col-md-6 pl-3">
+                    <form>
+                        <div class="form-group row">
+                            <label for="evolucionPokemon" class="col-sm-4 col-form-label">Evoluciona de</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="evolucionPokemon" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="habitatPokemon" class="col-sm-4 col-form-label">Habitat</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="habitatPokemon" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="formaPokemon" class="col-sm-4 col-form-label">Forma</label>
+                            <div class="col-sm-8">
+                                <input type="text" readonly class="form-control-plaintext" id="formaPokemon" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Snackbar-->
+<div id="snackbar"></div>
+
+
+<script src="buscador.js" type="application/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
